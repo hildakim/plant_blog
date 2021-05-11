@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Update Your Plant Blog/h1>
+
+<form action="{%url 'edit' review.id %}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{edit_form.as_table}}
+    <!-- <table>
+        <tr>
+          <td><label for="title">제목</label></td>
+          <td><input type="text" name="post_title" id="title" value="{{review.post_title}}"></td>
+        </tr>
+        <tr>
+          <td><label for="writer">작성자</label></td>
+          <td><input type="text" name="post_writer" id="writer" value="{{review.nickname}}"></td>
+        </tr>
+        <tr>
+          <td><label for="body">내용</label></td>
+          <td><textarea name="post_body" id="body" cols="75" rows="10">{{review.post_body}}</textarea></td>
+        </tr>
+    </table> -->
+    <button type="submit"> submit </button>
+</form>
+
+{% endblock %}
