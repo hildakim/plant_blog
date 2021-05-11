@@ -38,10 +38,10 @@ def new(request):
 
 def edit(request, id):
   post = get_object_or_404(Blog, pk = id)
-  if request.method == 'GET': #수정 페이지
+  if request.method == 'GET': 
     blog_form = BlogForm(instance = post)
     return render(request, 'edit.html', {'edit_form':blog_form})
-  else: #수정 버튼 누름
+  else: 
     blog_form = BlogForm(request.POST, request.FILES, instance = post)
     if blog_form.is_valid():
       edit_blog = blog_form.save(commit=False)

@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load crispy_forms_tags %}
 <h1>Write Your Plant blog</h1>
 
 <form action="{%url 'new' %}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
-    <table>
+    {{form | crispy }}
+    <!-- <table>
       {{form.as_table}}
-    </table>
+      
+    </table> -->
     
     <button type="submit"> submit </button>
 </form>

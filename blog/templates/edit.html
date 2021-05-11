@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
+<h1>Update Your Plant Blog</h1>
 
-<h1>Update Your Plant Blog/h1>
-
-<form action="{%url 'edit' review.id %}" method="post" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
     {%csrf_token%}
-    {{edit_form.as_table}}
+    {{edit_form | crispy}}
+    <!-- {{edit_form.as_table}} -->
     <!-- <table>
         <tr>
           <td><label for="title">제목</label></td>
