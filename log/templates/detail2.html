@@ -3,22 +3,22 @@
 <div>
     <table>
         <tr>
-            <th colspan="2">{{blogPost.post_title}}</th>
+            <th colspan="2">{{blogPost.log_title}}</th>
         </tr>
         <tr>
             <td>{{blogPost.nickname}}</td>
             <td>{{blogPost.upload_date}}</td>
         </tr>
         <tr> 
-            <td colspan="2" id="mainText">{{blogPost.post_body | linebreaks }}</td>
+            <td colspan="2" id="mainText">{{blogPost.log_body | linebreaks }}</td>
         </tr>
-        <!-- {% if blogPost.image %}
+        {% if blogPost.image %}
         <tr>
             <td colspan="2"><img src="{{blogPost.image.url}}" alt="" max-width="500px" max-height="500px"></td>
         </tr>
-        {% endif %} -->
+        {% endif %}
     </table>
-    <a href="{%url 'edit' blogPost.id %}" class="button_box">edit</a>
-    <a href="{%url 'delete' blogPost.id %}" class="button_box">delete</a>
+    <a href="{%url 'o-log/edit' blogPost.id %}" class="button_box">edit</a>
+    <a href="{%url 'o-log/delete' blogPost.id %}" class="button_box">delete</a>
 </div>
 {% endblock %}

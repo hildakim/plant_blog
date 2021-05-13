@@ -1,5 +1,6 @@
 from django.db import models
-
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 # Create your models here.
 
 class Log(models.Model):
@@ -8,6 +9,7 @@ class Log(models.Model):
   upload_date = models.DateTimeField()
   log_body = models.TextField()
   image = models.ImageField(upload_to='log/', null=True, blank=True)
+  image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(300, 200)])
 
   def __str__(self):
     return self.log_title 

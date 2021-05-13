@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Observation Log</h1>
+
+<div class="o-log-flex">
+    {% for post in allPost %}
+    <table>
+        {% if post.image %}
+        <tr>
+            <td colspan="2"><img src="{{post.image_thumbnail.url}}" alt=""></td>
+        </tr>
+        {% endif %}
+        <tr>
+            <th colspan="2"><a href = "{%url 'o-log/detail' post.id %}">{{post.log_title}}</a></th>
+        </tr>
+        <!-- <tr>
+            <td colspan="2">{{post.nickname}}</td>
+        </tr> -->
+        <tr>
+            <td colspan="2">{{post.upload_date}}</td>
+        </tr>
+        <!-- <tr> 
+            <td colspan="2" id="mainText">{{post.summary}}<a href = "{%url 'o-log/detail' post.id %}">더보기</a></td>
+        </tr> -->
+    </table>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+{% endblock %}

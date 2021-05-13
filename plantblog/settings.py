@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'log.apps.LogConfig',
     'crispy_forms',
+    'imagekit',
 ]
 
 MIDDLEWARE = [

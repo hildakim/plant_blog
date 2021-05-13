@@ -10,6 +10,7 @@
           }
           div {
             text-align: center;
+            margin: 5px;
           }
           h1{
             text-align: center;
@@ -23,17 +24,31 @@
             /* border-bottom: white 1px solid; */
             /* text-shadow: 3px 3px 0px white; */
           }
-          
+          table {
+            margin: 20px auto;
+            font-family: 'Cute Font', cursive;
+            background-color:cornsilk;
+            border-radius: 15px;
+            width: fit-content;
+            /* border: 3px seagreen solid; */
+            padding: 5px;
+          }
+          th{
+            background-color: white;
+            border-radius: 15px;
+            /* width:auto; */
+          }
+          #mainText {
+            background-color: lightyellow;
+            border-radius: 15px;
+            padding: 5px;
+          }
+          .form-content{
+            /* background-color: white; */
+            text-align: center;
+          }
           #mainText {
             text-align: left;
-          }
-          a.white_box {
-            /* background-color: white;
-            color:black; */
-            text-decoration: none;
-            font-family: 'Freckle Face', cursive;
-            /* font-weight: bold; */
-            padding: 5px;
           }
           .nav-container {
             display: flex;
@@ -54,27 +69,17 @@
             text-align: center;
             text-decoration: none;
             font-family: 'Freckle Face', cursive;
-            /* font-weight: bold; */
+            color: seagreen;
             font-size: 20px;
           }
-          
-          #title, #writer, #movie {
-            width:80%;
-          }
-          .blog a{
-            color: rebeccapurple;
-          }
-          .photo a{
-            color:darkslateblue;
-          }
           input, textarea {
-            width: 80%;
+            /* width: 80%; */
             border: 2px yellowgreen solid;
-            border-radius: 15px;
+            /* border-radius: 15px; */
             padding: 5px;
             background-color: lightyellow;
           } 
-          button {
+          button, .button_box {
             background-color: white;
             color: seagreen;
             font-family: 'Freckle Face', cursive;
@@ -82,6 +87,13 @@
             border: none;
             font-size: 25px;
             border-radius: 10px;
+          }
+          .o-log-flex {
+            display: flex;
+            /* flex-direction: row; */
+            align-items:flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
           }
       </style>
     </head>
@@ -95,13 +107,18 @@
                   <img src="{% static 'plant.png' %}" width="60" height="70">
                 </a>
               </li>
-              <li class="nav-item blog">
+              <li class="nav-item">
                 <a href="{% url 'home' %}">Plant-Blog</a>
               </li>
-              <li class="nav-item blog">
+              <li class="nav-item">
                 <a href="{% url 'new' %}">Blog write</a>
               </li>
-              
+              <li class="nav-item">
+                <a href="{% url 'o-log/home' %}">Observation-Log</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'o-log/new' %}">o-Log write</a>
+              </li>
             </ul>
 
         </nav>
